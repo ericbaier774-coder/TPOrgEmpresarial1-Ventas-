@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 #Levanta el csv y lo convierte en un dataframe
 def levantar_csv():
     try:
-        df = pd.read_csv("/content/TPOrgEmpresarial1-Ventas-/datos/ventas.csv")
+        df = pd.read_csv("datos/ventas.csv")
         if df.empty:
             raise ValueError("El archivo CSV está vacío.")
         return df
@@ -60,12 +60,12 @@ def grafico_ventas_productos(ventas, productos):
     plt.title('Ventas por Producto')
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig("/content/TPOrgEmpresarial1-Ventas-/resultados/grafico_ventas.png")
+    plt.savefig("resultados/grafico_ventas.png")
     plt.show()
 
 
 # Crear carpeta de resultados si no existe
-os.makedirs("/content/TPOrgEmpresarial1-Ventas-/resultados", exist_ok=True)
+os.makedirs("resultados", exist_ok=True)
 
 #Limpio consola y ejecuto funciones
 os.system('cls' if os.name == 'nt' else 'clear')
